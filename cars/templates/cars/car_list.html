@@ -1,9 +1,19 @@
+
 {% extends 'base.html' %}
+
+{%load cars_tags%}
+
 
 {%block titulo%} Lista de Coches {%endblock titulo%}
 
 {%block content%}
+<h2>
+  Total de problemas: {%perro%}
+</h2>
+
 <div class="row">
+
+<div class="row col m8">
 {%for car in object_list%}
 
 
@@ -30,4 +40,20 @@
 
 {%endfor%}
 </div>
+
+  <div class="col m4">
+    {%ultimo 3%}
+  </div>
+  <div class="col m4">
+    {%ultimos as issues%}
+    {%for issue in issues%}
+    <p style="border:1px solid red;">
+      <a href="{%url 'detail' issue.id%}">
+      {{issue.modelo}}
+      </a>
+    </p>  
+    {%endfor%}
+  </div>
+
+</div>  <!-- row master-->
 {%endblock content%}

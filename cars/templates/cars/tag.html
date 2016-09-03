@@ -1,0 +1,9 @@
+<ul style="border:1px solid orange;">
+	{%for issue in ultimos_issues%}
+	<li>
+		<a href="{%url 'detail' issue.id%}">
+			{{issue.modelo}}
+		</a>
+	</li>
+	{%endfor%}
+</ul>

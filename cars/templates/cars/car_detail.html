@@ -1,11 +1,14 @@
 {%extends 'base.html'%}
-
+{%load cars_tags%}
 {%block content%}
 
 <h1>{{car.model}}</h1>
+<h5>Un tag random: {%propietario%}</h5>
 <p>Fecha: <span>{{car.fecha}}</span></p>
 <p>Propietario: <span>{{car.propietario}}</span></p>
 <p>Problemas: <span>{{car.issue}}</span></p>
 <p>foto: <img style="width:100px;" src="{{car.foto.url}}"></p>
+<a class="btn blue" href="{%url 'update' car.id%}">Editar</a>
+<a class="btn red" href="{%url 'delete' car.id%}">Eliminar</a>
 
 {%endblock content%}

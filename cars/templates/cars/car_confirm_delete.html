@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+
+{%block content%}
+
+<form method="post">
+	{%csrf_token%}
+	<h2>¿Estas seguro que deseas borrar el carro {{object}}?</h2>
+	<input class="btn green" type="submit" value="Si, Seguro">
+
+</form>
+	<a class="btn orange" href="{%url 'list'%}">Cancelar</a>
+{%endblock content%}

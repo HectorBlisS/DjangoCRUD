@@ -15,7 +15,7 @@ class CarDetail(DetailView):
 class CarCreation(CreateView):
 	model = Car
 	success_url = reverse_lazy('list')
-	fileds = ['modelo','propietario','issue','foto']
+	fields = ['modelo','propietario','issue','foto']
 
 class CarUpdate(UpdateView):
 	model = Car
